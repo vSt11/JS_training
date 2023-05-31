@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rock, paper, scissors</title>
+</head>
+<body>
+  <script>
+    let getComputerChoice = () => {
+        let number = Math.floor(Math.random() * 3);
+        if (number == 1) {
+          return "paper";
+        } else if (number == 2) {
+          return "rock";
+        } else {
+          return "scissors";
+        }
+      }
+
+      let getUserScore = () => {
+        return UserScore;
+      }
+
+      let getComputerScore = () => {
+        input
+        return ComputerScore;
+      };
+
+      var getUserChoice = function(){
+        input = prompt("Rock, paper, scissors?");
+
+        if (input.toLowerCase()==="rock" || input.toLowerCase()==="paper" || input.toLowerCase()==="scissors"){
+            console.log("if")
+        return input;}
+
+        else {
+            console.log("else")
+            input = prompt("Please enter a correct answer : Rock, paper, or Scissors");
+        }
+      }
+
+      var maxscore = 0;
+      var UserScore=0;
+      var ComputerScore=0;
+      var computerChoice;
+      var playerChoice;      
+
+      var playRound = () => {
+       playerChoice = getUserChoice();
+       computerChoice = getComputerChoice();
+       
+
+       if (playerChoice.toLowerCase() == "score"){
+        console.log("IA :"+ computerChoice +" Vous : "+ playerChoice);
+    }
+
+        if (playerChoice.toLowerCase() === computerChoice.toLowerCase()) {
+            console.log("IA :"+ computerChoice +" Vous : "+ playerChoice);
+            console.log("Egalité !")
+          }
+          else if (playerChoice.toLowerCase()== "rock"){
+            if (computerChoice.toLowerCase()=="paper"){
+                console.log("IA :"+ computerChoice +" Vous : "+ playerChoice);
+                console.log("Perdu !");
+                ComputerScore++;
+            }
+            else {
+                console.log("IA :"+ computerChoice +" Vous : "+ playerChoice);
+                console.log("Gagné!");
+                UserScore++;
+            }
+          }
+          else if (playerChoice.toLowerCase()=="paper"){
+            
+            if (computerChoice.toLowerCase()=="scissors"){
+                console.log("IA :"+ computerChoice +" Vous : "+ playerChoice);
+
+                console.log("Perdu !");
+                ComputerScore++;
+            }
+            else {
+                console.log("IA :"+ computerChoice +" Vous : "+ playerChoice);
+
+                console.log("Gagné!");
+                UserScore++;
+            }
+          }
+          else if (playerChoice.toLowerCase()=="scissors"){
+            if (computerChoice.toLowerCase()=="rock"){
+                console.log(computerChoice + playerChoice);
+
+                console.log("Perdu !");
+                ComputerScore++;
+            }
+            else {
+                console.log("Gagné!");
+                console.log(computerChoice + playerChoice);
+                UserScore++;
+            }
+          }
+      }
+      
+
+      while (maxscore < 10) {
+        playRound();
+        console.log("Vous " + UserScore + " IA : " + ComputerScore);
+        maxscore = Math.max(ComputerScore, UserScore);
+
+
+
+      }
+
+      
+      
+
+  </script>
+</body>
+</html>
